@@ -1,0 +1,34 @@
+@mixin nlgx {
+	@media all and (max-width: 1699px) {
+		@content;
+	}
+}
+@mixin nlg {
+	@media all and (max-width: 1240px) {
+		@content;
+	}
+}
+
+@mixin nmd {
+	@media all and (max-width: 1025px) {
+		@content;
+	}
+}
+
+@mixin nsm {
+	@media all and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin nxs {
+	@media all and (max-width: 450px) {
+		@content;
+	}
+}
+
+@mixin nxxs {
+	@media all and (max-width: 350px) {
+		@content;
+	}
+}
