@@ -1,0 +1,118 @@
+.hero {
+	background: url("../img/hero-min.jpg") top center/cover no-repeat;
+	@media (min-resolution: 2dppx) {
+		background-image: url("../img/hero@2x-min.jpg");
+	}
+	@include nsm {
+		background: #fff;
+	}
+	&__wrap {
+		height: auto;
+		min-height: 850px;
+		max-width: 780px;
+		padding: 200px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		@include nlg {
+			padding: 180px 0 100px;
+			min-height: 650px;
+			max-width: 750px;
+		}
+		@include nmd {
+			min-height: 550px;
+			max-width: 520px;
+			padding: 80px 0 20px;
+		}
+		@include nsm {
+			min-height: auto;
+			max-width: 100%;
+			padding: 100px 0 40px;
+		}
+	}
+	&__title {
+		font-size: 48px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 120%;
+		&--color {
+			color: $text-dark;
+		}
+		span {
+			color: $pryme-color;
+			display: inline-block;
+		}
+		@include nmd {
+			font-size: 32px;
+		}
+		@include nsm {
+			font-size: 22px;
+		}
+	}
+	
+	&__content {
+		max-width: 532px;
+		margin: 80px 0;
+		@include nlg {
+			margin: 50px 0;
+		}
+		@include nmd {
+			margin: 30px 0;
+			max-width: 480px;
+		}
+	}
+	&__subtitle {
+		font-size: 20px;
+		font-weight: 700;
+		@include nmd {
+			font-size: 18px;
+		}
+		@include nsm {
+			font-size: 16px;
+		}
+	}
+	&__list {
+		margin: 10px 0;
+	}
+	&__item {
+		font-size: 20px;
+		list-style-type: none;
+		display: flex;
+		line-height: 150%;
+		&::before {
+			content: '\2010';
+			margin: 0px 10px;
+		}
+		@include nmd {
+			font-size: 18px;
+		}
+		@include nsm {
+			font-size: 16px;
+		}
+	}
+	&__btn {
+		min-width: 183px; 
+		display: flex;
+		justify-content: center;
+		padding: 15px;
+		font-size: 13px;
+		text-transform: uppercase;
+		&:first-child {
+			margin-right: 30px;
+			@include nsm {
+				margin-right: 0;
+			}
+		}
+		@include nmd {
+			min-width: 170px;
+			padding: 12px;
+		}
+		@include nsm {
+			min-width: 48%;
+			padding: 8px;
+			font-size: 13px;
+		}
+	}
+
+}

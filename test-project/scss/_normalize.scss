@@ -1,0 +1,124 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px; 
+}
+*, 
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	min-width: $minwidth;
+	position: relative;
+	width: 100%;
+	color: $text-dark;
+	font-size: 16px;
+}
+body,
+html {
+  min-height: 100%;
+}
+main {
+	padding-top: 5.25rem;
+}
+
+body {
+	font-size: 100%;
+	line-height: 140%;
+	background: #ffffff;
+	font-family: $fontfamily;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	&.lock {
+		overflow: hidden;
+		@media (max-width: $md3+px) {
+			width: 100%;
+			position: fixed;
+			overflow: hidden;
+		}
+	}
+}
+input,
+button,
+textarea,
+select {
+	font-family: $fontfamily;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 120%;
+}
+input::-ms-clear {
+	display: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+.button:hover,
+.button:active,
+.button:focus {
+	outline: transparent;
+}
+
+a {
+	cursor: pointer;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:hover {
+	text-decoration: none;
+	outline: none;
+}
+
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: middle;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $fontfamily;
+	font-weight: inherit;
+	font-size: inherit;
+}

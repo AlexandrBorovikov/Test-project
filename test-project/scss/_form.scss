@@ -1,0 +1,273 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 30px;
+		@include nsm {
+			flex-direction: column;
+		}
+		&--align-bottom {
+			align-items: flex-end;
+		}
+	}
+	&__range {
+		width: 66%;
+		position: relative;
+		@include nsm {
+			width: 100%;
+		}
+	}
+
+	.range {
+		&__row {
+			display: flex;
+			justify-content: space-between;
+			@include nsm {
+				align-items: center;
+			}
+		}
+		&__inp {
+			width: 100%;
+			@include nsm {
+				margin-bottom: 30px;
+			}
+		}
+		&__title {
+			color: $text-light;
+			font-size: 18px;
+			@include nsm {
+				font-size: 16px;
+				max-width: 75%;
+			}
+		}
+		&__val {
+			color: $text-light;
+			font-family: $fontfamily;
+		}
+	
+	}
+		input[type=range]  {
+			width: 100%;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 3px;
+			margin-top: 15px;
+		  }
+		 input[type=range]::-webkit-slider-runnable-track {
+		
+			height: 6px;
+			background: rgba(255, 255, 255, 0.7);
+			border: 1px solid #FFF;
+			border-radius: 3px;
+		
+		}
+		input[type=range]::-webkit-slider-thumb {
+			background: #42A9ED;;
+			border: 3px solid #286690;
+			border-radius: 50%;
+			cursor: pointer;
+			width:23px;
+			height: 23px;
+			-webkit-appearance: none;
+			margin-top: -9.5px;
+		}
+	input[type=text], input[type=email], select {
+		width: 31.624%;
+		padding: 12.5px 10px;
+		background: rgba(255, 255, 255, 0.85);
+		border: 1px solid #FFF;
+		border-radius: 3px;
+		&::-moz-placeholder { color: #272733; }
+		&::-webkit-input-placeholder { color: #272733; }
+		@include nsm {
+			width: 100%;
+			margin-top: 10px;
+			font-size: 16px;
+		}
+	}
+	&__file-wrap {
+		width: 31.6%;
+		position: relative;
+		@include nsm {
+			width: 100%;
+		}
+	}
+	&__submit-btn {
+		padding: 12px;
+		background: $pryme-color;
+		color: $text-light;
+		border-radius: 3px;
+		border: 1px solid #FFF;
+		padding: 15px;
+		font-size: 15px;
+		text-transform: uppercase;
+		display: flex;
+		width: 31.624%;
+		align-self: center;
+		justify-content: center;
+		margin-top: 30px;
+		cursor: pointer;
+		transition: 0.3s;
+		@include nsm {
+			width: 100%;
+		}
+		&:hover {
+			border: 1px solid $pryme-color;
+			transition: 0.3s;
+		}
+	}
+	.input-file-container {
+		position: relative;
+		width: 225px;
+	} 
+	.input-file-trigger {
+		font-size: 15px;
+		text-transform: uppercase;
+		padding: 12.8px;
+		color: #272733;
+		display: flex;
+		border: 2px solid $pryme-color;
+		border-radius: 3px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		cursor: pointer;
+		background: $text-light;
+		transition: 0.3s;
+		@include nsm {
+			max-width: fit-content;
+			margin: 0 auto;
+		}
+		&::before {
+			content: '';
+			background: url('../img/file-icon.svg');
+			background-size: cover;
+			display: flex;
+			margin-right: 10px;
+			width: 18px;
+			height: 21px;
+		}
+	}
+	.input-file {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		opacity: 0;
+		padding: 15px 0;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+	.input-file:hover + .input-file-trigger,
+	.input-file:focus + .input-file-trigger,
+	.input-file-trigger:hover,
+	.input-file-trigger:focus {
+		border: 2px solid $text-light;
+		transition: 0.3s;
+	}
+}
+
+	.form .ui-button {
+		width: 31.624%;	
+		padding: 12.5px 10px;
+    	font-size: 18px;
+		background: rgba(255, 255, 255, 0.85);
+		transition: 0.2s;
+		border: 1px solid #FFF;
+		border-radius: 3px;
+		@include nsm {
+			width: 100%;
+			margin-top: 10px;
+			font-size: 16px;
+		}
+	}
+	.form .ui-button[aria-expanded="true"] {
+		background: rgba(61, 64, 80, 0.85);
+		color: $text-light;
+		border: none;
+		transition: 0.2s;
+		border-radius: 3px 3px 0 0;
+
+	}
+	.ui-widget-content{
+		background: rgba(39, 39, 51, 0.9);
+		border-radius: 0 0 3px 3px;
+		padding: 0;
+		max-height: 180px;
+		overflow-y: scroll;
+		@include nsm {
+			background: rgba(39, 39, 51);
+		}
+	}
+
+	//<Скролл>==============
+	::-webkit-scrollbar {
+		width: 7px;
+	}
+	::-webkit-scrollbar-track {
+		background: rgba(61, 64, 80, 0.85);
+		border-radius: 3px;
+		background-clip: content-box;
+	}
+	.ui-widget-content::-webkit-scrollbar-thumb {
+		background: #3E9CDC;  
+		border-radius: 3px;      
+	}
+
+	.ui-widget.ui-widget-content {
+    	border: 1px solid #3D4050;
+	}
+	.ui-menu-item {
+		color: $text-light;
+		font-size: 18px;
+		line-height: 120%;
+		padding-top: 14px;
+		padding-left: 5px;
+		&:last-child {
+			padding-bottom: 14px;
+		}
+	}
+	
+	
+	.ui-button .ui-icon {
+		background-image: url("../img/arrow-dark.svg");
+		background-size: 9px 6px;
+	}
+	.ui-icon-triangle-1-s {
+		background-position: 0;
+	}
+	.ui-selectmenu-icon.ui-icon {
+		margin-top: 3px;
+	}
+	.ui-icon,
+	.ui-widget-content .ui-icon {
+		background-image: url("../img/arrow.svg");
+	}
+	.ui-selectmenu-button-open.ui-button .ui-icon{
+		background-image: url("../img/arrow.svg");
+	}
+	.ui-selectmenu-button-closed.ui-button .ui-icon{
+		background-image: url("../img/arrow-dark.svg");
+	}
+	.ui-state-active .ui-icon, .ui-button:active .ui-icon{
+		background-image: url("../img/arrow-dark.svg");
+	}
+	
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active,
+	a.ui-button:active,
+	.ui-button:active,
+	.ui-button.ui-state-active:hover {
+		border: none;
+		background: none;
+		font-weight: normal;
+		color: $pryme-color;
+	}

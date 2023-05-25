@@ -1,0 +1,23 @@
+.landing-wrapper {
+	max-width: 1920px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.container {
+	max-width: $mw;
+	margin: 0 auto;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	@media (max-width: $md1) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}

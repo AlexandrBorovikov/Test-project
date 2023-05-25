@@ -1,0 +1,107 @@
+.nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		width: 100%;
+		&__list {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			@include nsm {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				overflow-y: hidden;
+				transition: 1s cubic-bezier(.68,-0.55,.27,10.55);
+				--height: 0px;
+				--padding: 25px;
+				--font-size: 13px;
+				flex-direction: column;
+				position: absolute;
+				width: 100%;
+				left: 0;
+				top: 80px;
+				height: var(--height);
+				&.active{
+					height: calc((((var(--padding) * 2) + (var(--font-size) * 1.5))) * var(--childenNumber));
+					background-color:  rgba(16, 16, 29, 0.9);
+					transition: 1s ease;
+				}
+				@include nsm {
+					top: 60px;
+				}
+			}
+		}
+		&__menu {
+			width: 32px;
+			height: 26px;
+			cursor: pointer;
+			display: none;
+			align-items: center;
+			flex-direction: column;
+			justify-content: space-between;
+			position: relative;
+			padding: 5px;
+            background-color: transparent;
+			@include nsm {
+				display: flex;
+			}
+			span {
+				width: 100%;
+				height: 2px;
+				border-radius: 99px;
+				background: $text-light;
+				transition: 0.3s ease;
+				transform-origin: left;
+			}
+			&.active span:nth-child(1) {
+				transform: rotate(40deg);
+			}
+
+			span:nth-child(3) {
+				transform-origin: left;
+			}
+
+			&.active span:nth-child(3) {
+				transform: rotate(-40deg);
+			}
+
+			&.active span:nth-child(2) {
+				transform: scale(0);
+			}
+		}
+		&__item {
+			margin-left: 60px;
+			@include nmd {
+				margin-left: 30px;
+			}
+			@include nsm {
+				margin-left: 0;
+			}
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
+		&__link {
+			display: flex;
+			text-transform: uppercase;
+			font-size: 13px;
+			font-family: $fontfamily;
+            color: $text-light;
+			transition: 0.3s ease;
+			padding: 20px 0; 
+			position: relative;
+			&--color {
+				color: $text-light;
+			}
+			
+			&:hover,
+			&:focus {
+                opacity: 0.7;
+			}
+			&.active {
+				color: $pryme-color;
+			}
+		}
+		
+	}
